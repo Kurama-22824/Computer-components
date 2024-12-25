@@ -16,19 +16,18 @@
         <img src="#" alt="Bootstrap" width="30" height="24">
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav">
-            <a class="nav-link" aria-current="page" href="index.html">Home</a>
-            <a class="nav-link" href="pricing.html">Pricing</a>
+            <a class="nav-link " aria-current="page" href="index.html">Home</a>
+            <a class="nav-link active" href="pricing.html">Pricing</a>
           </div>
           <div id="auth-buttons">
-            <button id="register-btn" onclick="openRegisterPanel()">Înregistrare</button>
-            <button id="login-btn" onclick="login()">Logare</button>
-        </div>
-        <div id="account-menu" style="display: none; position: relative;">
-            <button id="account-btn"  onclick="toggleAccountMenu()">"    "</button>
+            <button>Inregistrare</button>
+            <button>Logare</button>
+          </div>
+          <div id="account-menu" style="display: none;">
+            <button id="account-btn" onclick="openAccountMenu()">Account</button>
             <ul id="account-dropdown" style="display: none;">
-              <li id="account-data">Acount</li>
-              <li>Profil</li>
-              <li onclick="logout()">Deconectare</li>
+                <li>Profil</li>
+                <li onclick="logout()">Deconectare</li>
             </ul>
         </div>
         </div>
@@ -42,7 +41,7 @@
   <footer>
 
   </footer>
-  <script src="scripts/script.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="scripts/script.js"></script>
   </body>
 </html>

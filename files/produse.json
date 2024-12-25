@@ -1,0 +1,10 @@
+{
+    "Procesoare": [
+      { "id": 1, "name": "Intel i9", "price": 1000, "details": "8 core processor" },
+      { "id": 2, "name": "AMD Ryzen 7", "price": 900, "details": "8 core processor" }
+    ],
+    "Plăci_de_bază": [
+      { "id": 1, "name": "MSI B550", "price": 200, "details": "Supports Ryzen" }
+    ]
+  }
+  
