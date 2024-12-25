@@ -5,7 +5,7 @@
 body{
   background-color:gray;
 }
-.navbar-nav a{
+.nav-link{
   background-color: dimgray;
   border-radius: 20px;
   margin: 0 3px 0;
@@ -25,11 +25,13 @@ body{
   display: flex;
   justify-content: space-between;
 }
-div>button{
-  background-color: rgb(63, 62, 62);
+#auth-buttons>button{
+  background-color: rgb(82, 82, 82);
   border-radius: 20px;
   border: none;
+  margin: 0 2px;
   font-weight: bold;
+  text-align: center;
 }
 #account-menu {
   position: relative;
@@ -49,4 +51,14 @@ div>button{
   z-index: 10;
   text-align: right;
   font-size: 20px;
+}
+#account-menu>img{
+  max-width: 3em;
+  border-radius: 30px;
+  height: auto;
+  display: block;
+}
+.container-fluid>img{
+width: 2em;
+background-color: transparent;
 }
