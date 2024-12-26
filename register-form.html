@@ -1,0 +1,21 @@
+<div id="register-modal" class="modal hidden">
+    <div class="modal-content">
+        <span id="close-modal" class="close-btn">&times;</span>
+        <form id="register-form">
+            <h2>Register</h2>
+            <label for="nickname">Nickname:
+            <input type="text" id="nickname" minlength="5" required></label>
+            <label for="password">Password:
+            <input type="password" id="password" required></label>
+            <label for="confirm-password">Confirm Password:
+            <input type="password" id="confirm-password" required></label>
+            <label for="email">Email:
+            <input type="email" id="email" required></label>
+            <label for="phone">Phone:
+            <input type="tel" id="phone" pattern="\d{9}" required></label>
+            <label for="address">Address (optional):
+            <input type="text" id="address"></label>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</div>
