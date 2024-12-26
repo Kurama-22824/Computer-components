@@ -20,18 +20,18 @@ function checkAuthStatus() {
 }
 
 // Simulăm funcția de logare
-function login() {
-    const username = prompt('Introdu username-ul tău:');
-    if (username) {
-        // Salvăm starea utilizatorului în localStorage
-        localStorage.setItem('isLoggedIn', 'true');
-        localStorage.setItem('username', username);
+// function login() {
+//     const username = prompt('Introdu username-ul tău:');
+//     if (username) {
+//         // Salvăm starea utilizatorului în localStorage
+//         localStorage.setItem('isLoggedIn', 'true');
+//         localStorage.setItem('username', username);
 
-        // Actualizăm interfața
-        checkAuthStatus();
-        alert(`Bun venit, ${username}!`);
-    }
-}
+//         // Actualizăm interfața
+//         checkAuthStatus();
+//         alert(`Bun venit, ${username}!`);
+//     }
+// }
 
 // Simulăm funcția de deconectare
 function logout() {
@@ -70,3 +70,128 @@ function closeDropdownOnClickOutside(event) {
 
 // Apelăm funcția de verificare a stării la încărcarea paginii
 checkAuthStatus();
+
+document.getElementById("register-btn").addEventListener("click", () => {
+    // Verificăm dacă formularul a fost deja încărcat
+    if (!document.getElementById("register-modal")) {
+        // Încărcăm fișierul HTML al formularului
+        fetch('register-form.html')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Failed to load register-form.html");
+                }
+                return response.text();
+            })
+            .then(html => {
+                // Adăugăm formularul în body
+                const modalContainer = document.createElement('div');
+                modalContainer.innerHTML = html;
+                document.body.appendChild(modalContainer);
+
+                // Legăm evenimentul de închidere
+                document.getElementById("close-register-modal").addEventListener("click", () => {
+                    document.getElementById("register-modal").classList.add("hidden");
+                });
+
+                // Afișăm formularul
+                document.getElementById("register-modal").classList.remove("hidden");
+            })
+            .catch(error => console.error(error));
+    } else {
+        // Dacă formularul a fost deja încărcat, doar îl afișăm
+        document.getElementById("register-modal").classList.remove("hidden");
+    }
+});
+
+document.getElementById("login-btn").addEventListener("click", () => {
+    // Verificăm dacă formularul a fost deja încărcat
+    if (!document.getElementById("login-modal")) {
+        // Încărcăm fișierul HTML al formularului
+        fetch('login-form.html')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Failed to load login-form.html");
+                }
+                return response.text();
+            })
+            .then(html => {
+                // Adăugăm formularul în body
+                const modalContainer = document.createElement('div');
+                modalContainer.innerHTML = html;
+                document.body.appendChild(modalContainer);
+
+                // Legăm evenimentul de închidere
+                document.getElementById("close-login-modal").addEventListener("click", () => {
+                    document.getElementById("login-modal").classList.add("hidden");
+                });
+
+                // Afișăm formularul
+                document.getElementById("login-modal").classList.remove("hidden");
+            })
+            .catch(error => console.error(error));
+    } else {
+        // Dacă formularul a fost deja încărcat, doar îl afișăm
+        document.getElementById("login-modal").classList.remove("hidden");
+    }
+});
+
+// document.getElementById("register-form").addEventListener("submit", function (event) {
+//     event.preventDefault(); // Previne reîncărcarea paginii
+
+//     // Preia datele din formular
+//     const nickname = document.getElementById("nickname").value;
+//     const password = document.getElementById("password").value;
+//     const confirmPassword = document.getElementById("confirm-password").value;
+//     const email = document.getElementById("email").value;
+//     const phone = document.getElementById("phone").value;
+
+//     // Validează datele pe client
+//     if (password !== confirmPassword) {
+//         alert("Passwords do not match!");
+//         return;
+//     }
+
+//     if (!/^\d{9}$/.test(phone)) {
+//         alert("Phone number must be 9 digits!");
+//         return;
+//     }
+
+//     // Creează un obiect cu datele utilizatorului
+//     const userData = { nickname, password, role: "user", email, phone };
+
+//     // Permite utilizatorului să selecteze un fișier existent dintr-un director
+//     const fileInput = document.getElementById("fileInput");
+//     const file = fileInput.files[0];
+
+//     if (!file) {
+//         alert("Please select a file to update.");
+//         return;
+//     }
+
+//     const reader = new FileReader();
+//     reader.onload = function (event) {
+//         let existingData = [];
+//         try {
+//             existingData = JSON.parse(event.target.result); // Parsează fișierul JSON încărcat
+//         } catch (e) {
+//             console.log("No existing data or invalid JSON format.");
+//         }
+
+//         // Adaugă datele utilizatorului
+//         existingData.push(userData);
+
+//         // Crează fișierul JSON actualizat
+//         const jsonBlob = new Blob([JSON.stringify(existingData, null, 2)], { type: "application/json" });
+
+//         // Crează un link pentru descărcarea fișierului JSON actualizat
+//         const link = document.createElement("a");
+//         link.href = URL.createObjectURL(jsonBlob);
+//         link.download = file.name; // Păstrează același nume de fișier
+//         link.click();
+//     };
+
+//     // Citește fișierul selectat
+//     reader.readAsText(file);
+// });
+
+
