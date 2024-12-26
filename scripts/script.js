@@ -20,18 +20,18 @@ function checkAuthStatus() {
 }
 
 // Simulăm funcția de logare
-// function login() {
-//     const username = prompt('Introdu username-ul tău:');
-//     if (username) {
-//         // Salvăm starea utilizatorului în localStorage
-//         localStorage.setItem('isLoggedIn', 'true');
-//         localStorage.setItem('username', username);
+function login() {
+    const username = document.getElementById("nickname").value;
+    if (username) {
+        // Salvăm starea utilizatorului în localStorage
+        localStorage.setItem('isLoggedIn', 'true');
+        localStorage.setItem('username', username);
 
-//         // Actualizăm interfața
-//         checkAuthStatus();
-//         alert(`Bun venit, ${username}!`);
-//     }
-// }
+        // Actualizăm interfața
+        checkAuthStatus();
+        alert(`Bun venit, ${username}!`);
+    }
+}
 
 // Simulăm funcția de deconectare
 function logout() {
