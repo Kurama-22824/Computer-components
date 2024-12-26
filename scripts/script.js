@@ -20,18 +20,18 @@ function checkAuthStatus() {
 }
 
 // Simulăm funcția de logare
-function login() {
-    const username = prompt('Introdu username-ul tău:');
-    if (username) {
-        // Salvăm starea utilizatorului în localStorage
-        localStorage.setItem('isLoggedIn', 'true');
-        localStorage.setItem('username', username);
+// function login() {
+//     const username = prompt('Introdu username-ul tău:');
+//     if (username) {
+//         // Salvăm starea utilizatorului în localStorage
+//         localStorage.setItem('isLoggedIn', 'true');
+//         localStorage.setItem('username', username);
 
-        // Actualizăm interfața
-        checkAuthStatus();
-        alert(`Bun venit, ${username}!`);
-    }
-}
+//         // Actualizăm interfața
+//         checkAuthStatus();
+//         alert(`Bun venit, ${username}!`);
+//     }
+// }
 
 // Simulăm funcția de deconectare
 function logout() {
@@ -89,7 +89,7 @@ document.getElementById("register-btn").addEventListener("click", () => {
                 document.body.appendChild(modalContainer);
 
                 // Legăm evenimentul de închidere
-                document.getElementById("close-modal").addEventListener("click", () => {
+                document.getElementById("close-register-modal").addEventListener("click", () => {
                     document.getElementById("register-modal").classList.add("hidden");
                 });
 
@@ -100,6 +100,38 @@ document.getElementById("register-btn").addEventListener("click", () => {
     } else {
         // Dacă formularul a fost deja încărcat, doar îl afișăm
         document.getElementById("register-modal").classList.remove("hidden");
+    }
+});
+
+document.getElementById("login-btn").addEventListener("click", () => {
+    // Verificăm dacă formularul a fost deja încărcat
+    if (!document.getElementById("login-modal")) {
+        // Încărcăm fișierul HTML al formularului
+        fetch('login-form.html')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Failed to load login-form.html");
+                }
+                return response.text();
+            })
+            .then(html => {
+                // Adăugăm formularul în body
+                const modalContainer = document.createElement('div');
+                modalContainer.innerHTML = html;
+                document.body.appendChild(modalContainer);
+
+                // Legăm evenimentul de închidere
+                document.getElementById("close-login-modal").addEventListener("click", () => {
+                    document.getElementById("login-modal").classList.add("hidden");
+                });
+
+                // Afișăm formularul
+                document.getElementById("login-modal").classList.remove("hidden");
+            })
+            .catch(error => console.error(error));
+    } else {
+        // Dacă formularul a fost deja încărcat, doar îl afișăm
+        document.getElementById("login-modal").classList.remove("hidden");
     }
 });
 
