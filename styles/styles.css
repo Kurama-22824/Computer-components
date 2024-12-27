@@ -1,25 +1,36 @@
 *{
-  border: 1px dotted red;
+  border: 2px dotted red;
 }
-header, section, footer{
+header,
+section,
+footer {
   width: 70%;
   margin: 0 auto;
 }
-.row{
+
+.row {
   width: 100%;
   margin: 0;
 }
-.background-div{
+
+.background-div {
   width: 80%;
   margin: 10px auto 0;
 }
-body{
-  background-color:gray;
+
+body {
+  background-color: gray;
   display: flex;
   flex-direction: column;
 }
 
-.nav-link{
+.container-fluid>img {
+  width: 3rem;
+  height: auto;
+  border-radius: 30px;
+}
+
+.nav-link {
   background-color: dimgray;
   border-radius: 20px;
   margin: 0 3px 0;
@@ -27,19 +38,20 @@ body{
   text-align: center;
 }
 
-.nav-link:hover{
+.nav-link:hover {
   background-color: rgb(130, 199, 18);
 }
 
-.nav-link:active{
+.nav-link:active {
   background-color: rgb(245, 0, 0);
 }
 
-.collapse{
+.collapse {
   display: flex;
   justify-content: space-between;
 }
-div>button{
+
+div>button {
   background-color: dimgray;
   border-radius: 20px;
   border: none;
@@ -47,24 +59,30 @@ div>button{
   font-weight: bold;
   margin: 0 2px;
 }
-div>button:hover{
+
+div>button:hover {
   background-color: rgb(77, 75, 75);
 }
-.account-btn{
+
+.account-btn {
   width: 2rem;
   height: auto;
   border-radius: 20px;
 }
+
 #account-menu {
   position: relative;
 }
+
 #account-dropdown {
   list-style-type: none;
   margin: 0;
   padding: 0;
   position: absolute;
-  top: 100%; /* Apare sub buton */
-  right: 0; /* Aliniat la dreapta */
+  top: 100%;
+  /* Apare sub buton */
+  right: 0;
+  /* Aliniat la dreapta */
   background-color: #535353;
   border: 1px solid #ccc;
   border-radius: 10px;
@@ -74,12 +92,13 @@ div>button:hover{
   text-align: right;
   font-size: 20px;
 }
-#account-dropdown>li:hover{
+
+#account-dropdown>li:hover {
   background-color: #706f6f;
   border-radius: 10px;
 }
 
-.card-footer{
+.card-footer {
   display: flex;
   justify-content: flex-end;
   background-color: #fff;
@@ -122,17 +141,22 @@ div>button:hover{
   font-weight: bold;
 }
 
-.list-social-link{
-  list-style: none; /* Elimină bullet points */
-  padding: 0; 
-  margin: 0; 
-  display: flex; /* Setează layout-ul pe orizontală */
-  justify-content: center; /* Alinează pe orizontală la mijloc */
-  align-items: center; /* Alinează pe verticală la mijloc */
-  gap: 10px; /* Adaugă spațiu între elemente */
+.list-social-link {
+  list-style: none;
+  /* Elimină bullet points */
+  padding: 0;
+  margin: 0;
+  display: flex;
+  /* Setează layout-ul pe orizontală */
+  justify-content: center;
+  /* Alinează pe orizontală la mijloc */
+  align-items: center;
+  /* Alinează pe verticală la mijloc */
+  gap: 10px;
+  /* Adaugă spațiu între elemente */
 }
 
-.list-social-link>li{
+.list-social-link>li {
   display: inline-block;
 }
 
@@ -140,8 +164,9 @@ div>button:hover{
   width: 2rem;
   height: auto;
   border-radius: 10px;
-  transition: box-shadow 0.3s ease, transform 0.3s ease; /* Tranziție pentru un efect mai lin */
-  
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  /* Tranziție pentru un efect mai lin */
+
 }
 
 .list-social-link li a:hover img {
@@ -149,21 +174,25 @@ div>button:hover{
 }
 
 .icon-x:hover img {
-  box-shadow: 0 0 15px rgba(0, 255, 255, 0.8), 
-              0 0 30px rgba(0, 255, 255, 0.5); /* Culoare cyan */
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.8),
+    0 0 30px rgba(0, 255, 255, 0.5);
+  /* Culoare cyan */
 }
 
 .icon-facebook:hover img {
-  box-shadow: 0 0 15px rgba(59, 89, 152, 0.8), 
-              0 0 30px rgba(59, 89, 152, 0.5); /* Culoare albastru Facebook */
+  box-shadow: 0 0 15px rgba(88, 141, 255, 0.8),
+    0 0 30px rgba(59, 89, 152, 0.5);
+  /* Culoare albastru Facebook */
 }
 
 .icon-youtube:hover img {
-  box-shadow: 0 0 15px rgba(255, 0, 0, 0.8), 
-              0 0 30px rgba(255, 0, 0, 0.5); /* Culoare roșu YouTube */
+  box-shadow: 0 0 15px rgba(255, 0, 0, 0.8),
+    0 0 30px rgba(255, 0, 0, 0.5);
+  /* Culoare roșu YouTube */
 }
 
 .icon-instagram:hover img {
-  box-shadow: 0 0 15px rgba(193, 53, 132, 0.8), 
-              0 0 30px rgba(193, 53, 132, 0.5); /* Culoare violet Instagram */
+  box-shadow: 0 0 15px rgba(193, 53, 132, 0.8),
+    0 0 30px rgba(193, 53, 132, 0.5);
+  /* Culoare violet Instagram */
 }
