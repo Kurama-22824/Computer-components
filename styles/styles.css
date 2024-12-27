@@ -1,7 +1,7 @@
 *{
   border: 1px dotted red;
 }
-header, section{
+header, section, footer{
   width: 70%;
   margin: 0 auto;
 }
@@ -15,6 +15,8 @@ header, section{
 }
 body{
   background-color:gray;
+  display: flex;
+  flex-direction: column;
 }
 .nav-link{
   background-color: dimgray;
@@ -117,4 +119,19 @@ div>button:hover{
   cursor: pointer;
   font-size: 20px;
   font-weight: bold;
+}
+
+.list-social-link{
+  list-style: none; /* Elimină bullet points */
+  padding: 0; 
+  margin: 0; 
+  display: flex; /* Setează layout-ul pe orizontală */
+  justify-content: center; /* Alinează pe orizontală la mijloc */
+  align-items: center; /* Alinează pe verticală la mijloc */
+  gap: 10px; /* Adaugă spațiu între elemente */
+}
+
+.list-social-link>li{
+  display: inline-block;
+
 }

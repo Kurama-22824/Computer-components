@@ -1,47 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Computer</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Computer</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link rel="stylesheet" href="styles/styles.css">
 </head>
+
 <body>
   <header>
     <div class="background-div">
-    <nav class="navbar navbar-expand-lg">
-      <div class="container-fluid">
-        <img src="#" alt=" " width="30" height="24">
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-          <div class="navbar-nav">
-            <a class="nav-link" aria-current="page" href="index.html">Home</a>
-            <a class="nav-link" href="pricing.html">Pricing</a>
+      <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+          <img src="#" alt=" " width="30" height="24">
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <a class="nav-link" aria-current="page" href="index.html">Home</a>
+              <a class="nav-link" href="pricing.html">Pricing</a>
+            </div>
+            <div id="auth-buttons">
+              <button id="register-btn" onclick="openRegisterPanel()">sign in</button>
+              <button id="login-btn">log in</button>
+            </div>
+            <div id="account-menu" style="display: none; position: relative;">
+              <img class="account-btn" src="images/user icon.png" alt="user icon" onclick="toggleAccountMenu()" />
+              <ul id="account-dropdown" style="display: none;">
+                <li id="account-data">Acount</li>
+                <li>Profil</li>
+                <li onclick="logout()">Deconectare</li>
+              </ul>
+            </div>
           </div>
-          <div id="auth-buttons">
-            <button id="register-btn" onclick="openRegisterPanel()">sign in</button>
-            <button id="login-btn">log in</button>
         </div>
-        <div id="account-menu" style="display: none; position: relative;">
-          <img class="account-btn" src="images/user icon.png" alt="user icon" onclick="toggleAccountMenu()" />
-            <ul id="account-dropdown" style="display: none;">
-              <li id="account-data">Acount</li>
-              <li>Profil</li>
-              <li onclick="logout()">Deconectare</li>
-            </ul>
-        </div>
-        </div>
-      </div>
-    </nav>
-  </div>
+      </nav>
+    </div>
   </header>
   <section>
-    
+
   </section>
   <footer>
-
+    <div class="container text-center">
+      <div class="row">
+        <div class="col">
+          <h2>CCPF Inc.</h2>
+          <p>All rights reserved.</p>
+        </div>
+        <div class="col">
+          <h2>Program de lucru</h2>
+          <p class="orar"> Lu-Vi: 08:00 - 20:00</p>
+          <p class="orar"> Si-Du: 9:00 - 18:00</p>
+        </div>
+        <div class="col">
+          <h2>Contacte</h2>
+          <p class="orar">Tel: +(373)22 645-464</p>
+          <p class="orar">Email: tehnica@gmail.com
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <h2>Social</h2>
+          <ul class="list-social-link">
+            <li><a href="#">Twitter</a></li>
+            <li><a href="#">Facebook</a></li>
+            <li><a href="#">YouTube</a></li>
+            <li><a href="#">Instagram</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
   </footer>
   <script src="scripts/script.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-  </body>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+</body>
+
 </html>
