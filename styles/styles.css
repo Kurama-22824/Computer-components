@@ -18,6 +18,7 @@ body{
   display: flex;
   flex-direction: column;
 }
+
 .nav-link{
   background-color: dimgray;
   border-radius: 20px;
@@ -133,5 +134,35 @@ div>button:hover{
 
 .list-social-link>li{
   display: inline-block;
+}
 
+.list-social-link li img {
+  width: 2rem;
+  height: auto;
+  border-radius: 10px;
+  transition: box-shadow 0.3s ease, transform 0.3s ease; /* Tranziție pentru un efect mai lin */
+}
+
+.icon-x:hover img {
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.8), 
+              0 0 30px rgba(0, 255, 255, 0.5); /* Culoare cyan */
+  transform: scale(1.1);
+}
+
+.icon-facebook:hover img {
+  box-shadow: 0 0 15px rgba(59, 89, 152, 0.8), 
+              0 0 30px rgba(59, 89, 152, 0.5); /* Culoare albastru Facebook */
+  transform: scale(1.1);
+}
+
+.icon-youtube:hover img {
+  box-shadow: 0 0 15px rgba(255, 0, 0, 0.8), 
+              0 0 30px rgba(255, 0, 0, 0.5); /* Culoare roșu YouTube */
+  transform: scale(1.1);
+}
+
+.icon-instagram:hover img {
+  box-shadow: 0 0 15px rgba(193, 53, 132, 0.8), 
+              0 0 30px rgba(193, 53, 132, 0.5); /* Culoare violet Instagram */
+  transform: scale(1.1);
 }
