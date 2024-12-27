@@ -1,21 +1,36 @@
+<link rel="stylesheet" href="styles/formular.css">
 <div id="register-modal" class="modal hidden">
-    <div class="modal-content">
-        <span id="close-register-modal" class="close-btn">&times;</span>
-        <form id="register-form">
-            <h2>Register</h2>
-            <label for="nickname">Nickname:
-            <input type="text" id="nickname" minlength="5" required></label>
-            <label for="password">Password:
-            <input type="password" id="password" required></label>
-            <label for="confirm-password">Confirm Password:
-            <input type="password" id="confirm-password" required></label>
-            <label for="email">Email:
-            <input type="email" id="email" required></label>
-            <label for="phone">Phone:
-            <input type="tel" id="phone" pattern="\d{9}" required></label>
-            <label for="address">Address (optional):
-            <input type="text" id="address"></label>
-            <button type="submit">Submit</button>
-        </form>
-    </div>
+  <div class="modal-content box">
+    <span id="close-register-modal" class="close-btn">&times;</span>
+    <h2>Register</h2>
+    <form id="register-form">
+      <div class="user-box">
+        <input type="text" id="nickname" minlength="5" required>
+        <label for="nickname">Nickname:</label>
+      </div>
+      <div class="user-box">
+        <input type="password" id="password" required>
+        <label for="password">Password:</label>
+      </div>
+      <div class="user-box">
+        <input type="password" id="confirm-password" required>
+        <label for="confirm-password">Confirm Password:</label>
+      </div>
+      <div class="user-box">
+        <input type="email" id="email" required>
+        <label for="email">Email:</label>
+      </div>
+      <div class="user-box">
+        <input type="tel" id="phone" pattern="\d{9}" required>
+        <label for="phone">Phone:</label>
+      </div>
+      <div class="user-box">
+        <input type="text" id="address" required>
+        <label for="address">Address:</label>
+      </div>
+      <div id="submit-button">
+        <button type="submit">Submit</button>
+      </div>
+    </form>
+  </div>
 </div>
