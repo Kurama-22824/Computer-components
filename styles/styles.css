@@ -1,10 +1,11 @@
-*{
+/* *{
   border: 2px dotted red;
-}
+} */
+
 header,
 section,
 footer {
-  width: 70%;
+  width: 80%;
   margin: 0 auto;
 }
 
@@ -98,6 +99,22 @@ div>button:hover {
   border-radius: 10px;
 }
 
+.buttons-container {
+  margin-bottom: 20px;
+
+}
+.buttons-container button {
+  margin: 5px;
+  cursor: pointer;
+  align-items: center;
+}
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+.col-lg-4 {
+  margin-bottom: 5px;
+}
 .card-footer {
   display: flex;
   justify-content: flex-end;
@@ -121,6 +138,15 @@ div>button:hover {
 
 .modal.hidden {
   display: none;
+}
+
+.card-box.hidden {
+  visibility: hidden; /* Ascunde vizual elementul */
+  height: 0;          /* Închide înălțimea */
+  margin: 0;          /* Elimină marginile */
+  padding: 0;         /* Elimină padding-ul */
+  overflow: hidden;   /* Ascunde conținutul */
+  width: 0;
 }
 
 .modal-content {

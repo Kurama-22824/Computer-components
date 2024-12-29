@@ -135,63 +135,49 @@ document.getElementById("login-btn").addEventListener("click", () => {
   }
 });
 
-// document.getElementById("register-form").addEventListener("submit", function (event) {
-//     event.preventDefault(); // Previne reîncărcarea paginii
+// Select buttons and card container
+const filterVideoCardsButton = document.getElementById('filter-video-cards');
+const filterProcessorsButton = document.getElementById('filter-processors');
+const cards = document.querySelectorAll('.card-box');
 
-//     // Preia datele din formular
-//     const nickname = document.getElementById("nickname").value;
-//     const password = document.getElementById("password").value;
-//     const confirmPassword = document.getElementById("confirm-password").value;
-//     const email = document.getElementById("email").value;
-//     const phone = document.getElementById("phone").value;
+// State variables to track active filters
+let videoCardFilterActive = false;
+let processorFilterActive = false;
 
-//     // Validează datele pe client
-//     if (password !== confirmPassword) {
-//         alert("Passwords do not match!");
-//         return;
-//     }
+// Function to filter cards by category
+function filterCards(category) {
+  cards.forEach(card => {
+    if (card.dataset.category !== category) {
+      card.classList.add('hidden');
+    } else {
+      card.classList.remove('hidden');
+    }
+  });
+}
 
-//     if (!/^\d{9}$/.test(phone)) {
-//         alert("Phone number must be 9 digits!");
-//         return;
-//     }
+// Function to show all cards
+function showAllCards() {
+  cards.forEach(card => card.classList.remove('hidden'));
+}
 
-//     // Creează un obiect cu datele utilizatorului
-//     const userData = { nickname, password, role: "user", email, phone };
+// Event listener for Video Cards button
+filterVideoCardsButton.addEventListener('click', () => {
+  videoCardFilterActive = !videoCardFilterActive; // Toggle filter state
+  processorFilterActive = false; // Disable other filter
+  if (videoCardFilterActive) {
+    filterCards('video-card');
+  } else {
+    showAllCards();
+  }
+});
 
-//     // Permite utilizatorului să selecteze un fișier existent dintr-un director
-//     const fileInput = document.getElementById("fileInput");
-//     const file = fileInput.files[0];
-
-//     if (!file) {
-//         alert("Please select a file to update.");
-//         return;
-//     }
-
-//     const reader = new FileReader();
-//     reader.onload = function (event) {
-//         let existingData = [];
-//         try {
-//             existingData = JSON.parse(event.target.result); // Parsează fișierul JSON încărcat
-//         } catch (e) {
-//             console.log("No existing data or invalid JSON format.");
-//         }
-
-//         // Adaugă datele utilizatorului
-//         existingData.push(userData);
-
-//         // Crează fișierul JSON actualizat
-//         const jsonBlob = new Blob([JSON.stringify(existingData, null, 2)], { type: "application/json" });
-
-//         // Crează un link pentru descărcarea fișierului JSON actualizat
-//         const link = document.createElement("a");
-//         link.href = URL.createObjectURL(jsonBlob);
-//         link.download = file.name; // Păstrează același nume de fișier
-//         link.click();
-//     };
-
-//     // Citește fișierul selectat
-//     reader.readAsText(file);
-// });
-
-
+// Event listener for Processors button
+filterProcessorsButton.addEventListener('click', () => {
+  processorFilterActive = !processorFilterActive; // Toggle filter state
+  videoCardFilterActive = false; // Disable other filter
+  if (processorFilterActive) {
+    filterCards('processor');
+  } else {
+    showAllCards();
+  }
+});
