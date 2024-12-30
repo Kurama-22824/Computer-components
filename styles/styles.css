@@ -25,6 +25,12 @@ body {
   flex-direction: column;
   min-height: 100vh; 
   flex-direction: column;
+  color: #fff;
+  /* background: linear-gradient(135deg, #212534, #0f101a); */
+  /* background: url('texture.png');
+  background-size: cover;
+  background-repeat: no-repeat; */
+  background: radial-gradient(circle, #212534 40%, #10111a);
 }
 
 .container-fluid>img {
