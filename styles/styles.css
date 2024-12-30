@@ -20,8 +20,10 @@ footer {
 }
 
 body {
-  background-color: gray;
+  /* background-color: gray; */
   display: flex;
+  flex-direction: column;
+  min-height: 100vh; 
   flex-direction: column;
 }
 
@@ -32,19 +34,23 @@ body {
 }
 
 .nav-link {
-  background-color: dimgray;
+  background: linear-gradient(#04a7e7, #5c2cc4);
   border-radius: 20px;
   margin: 0 3px 0;
   width: 6em;
   text-align: center;
+  color: #fff;
 }
 
 .nav-link:hover {
-  background-color: rgb(130, 199, 18);
+  background: #04a7e7;
+  font-weight: bold;
+  color: #fff;
 }
 
 .nav-link:active {
-  background-color: rgb(245, 0, 0);
+  background: #5c2cc4;
+  color: #fff;
 }
 
 .collapse {
@@ -53,16 +59,21 @@ body {
 }
 
 div>button {
-  background-color: dimgray;
+  background: linear-gradient(rgb(4, 167, 231), rgb(92, 44, 196));
   border-radius: 20px;
   border: none;
   margin: 0 2px;
   font-weight: bold;
   margin: 0 2px;
+  color: #fff;
 }
 
 div>button:hover {
-  background-color: rgb(77, 75, 75);
+  /* background: linear-gradient(rgb(4, 167, 231), rgb(92, 44, 196)); */
+  opacity: 0.9;
+  box-shadow: 0 0 15px rgba(92, 44, 196, 0.8),
+              0 0 30px rgba(92, 44, 196, 0.5);
+  transform: scale(1.1);
 }
 
 .account-btn {
@@ -84,7 +95,7 @@ div>button:hover {
   /* Apare sub buton */
   right: 0;
   /* Aliniat la dreapta */
-  background-color: #535353;
+  background: linear-gradient(#04a7e7, #5c2cc4);
   border: 1px solid #ccc;
   border-radius: 10px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
@@ -92,11 +103,13 @@ div>button:hover {
   z-index: 10;
   text-align: right;
   font-size: 20px;
+  color: #fff;
 }
 
 #account-dropdown>li:hover {
-  background-color: #706f6f;
+  opacity: 0.9;
   border-radius: 10px;
+  cursor: pointer;
 }
 
 .buttons-container {
@@ -118,7 +131,6 @@ div>button:hover {
 .card-footer {
   display: flex;
   justify-content: flex-end;
-  background-color: #fff;
   border-top: none;
   gap: 10px;
 }
@@ -321,3 +333,80 @@ div>button:hover {
 .dots .dot.active {
   background: #00ff00;
 }
+
+/* card styel */
+@property --rotate {
+  syntax: "<angle>";
+  initial-value: 132deg;
+  inherits: false;
+}
+
+.card {
+  background: #191c29;
+  width: var(--card-width);
+  height: var(--card-height);
+  padding: 3px;
+  position: relative;
+  border-radius: 6px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  display: flex;
+  font-size: 1.5em;
+  color: rgb(88 199 250 / 100%);
+  cursor: pointer;
+  font-family: cursive;
+  margin-bottom: 15px;
+}
+
+.card::before {
+  content: "";
+  width: 104%;
+  height: 102%;
+  border-radius: 8px;
+  background-image: linear-gradient(
+    var(--rotate)
+    , #5ddcff, #3c67e3 43%, #4e00c2);
+    position: absolute;
+    z-index: -1;
+    top: -1%;
+    left: -2%;
+    animation: spin 5s linear infinite;
+}
+
+.card::after {
+  position: absolute;
+  content: "";
+  top: calc(var(--card-height) / 6);
+  left: 0;
+  right: 0;
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+  transform: scale(0.8);
+  filter: blur(calc(var(--card-height) / 6));
+  background-image: linear-gradient(
+    var(--rotate)
+    , #5ddcff, #3c67e3 43%, #4e00c2);
+    opacity: 1;
+  transition: opacity .5s;
+  animation: spin 5s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    --rotate: 0deg;
+  }
+  100% {
+    --rotate: 360deg;
+  }
+}
+
+/* a {
+  color: #212534;
+  text-decoration: none;
+  font-family: sans-serif;
+  font-weight: bold;
+  margin-top: 2rem;
+} */
